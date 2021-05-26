@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  db:
+    image: "postgres:11"
+    restart: always
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 54322:5432
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python main.py
+    env_file:
+      - ./.env
+    ports:
+      - 8001:5000
+    volumes:
+      - static_volume:/code/staticfiles
+      - media_volume:/code/mediafiles
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
