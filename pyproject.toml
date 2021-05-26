@@ -6,7 +6,6 @@ authors = ["surajmt8848 <suraj8848mt@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Flask = "^1.1.1"
 Flask-SQLAlchemy = "^2.5.1"
 SQLAlchemy = "^1.4.15"
 Flask-Script = "^2"
@@ -19,6 +18,11 @@ autopep8 = "^1.5.7"
 python-dotenv = "^0.17.1"
 contextvars = "^2.4"
 Flask-Migrate = "^2.5.2"
+flask-marshmallow = "^0.14.0"
+connexion = "^2.7.0"
+Flask = "^2.0.1"
+marshmallow-sqlalchemy = "^0.25.0"
+Flask-RESTful = "^0.3.9"
 
 [tool.poetry.dev-dependencies]
 
